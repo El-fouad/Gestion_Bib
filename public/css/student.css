@@ -1,0 +1,167 @@
+.addcat{  
+    margin-left:10%;
+    padding-top: 220px;
+    margin-bottom: -286px;
+    text-align: center;
+    font-size: 30px;
+    font-family:Arial, Helvetica, sans-serif;
+}
+button{
+    background-color: rgb(14, 200, 5);
+    font-size: 15px;
+    margin-top: 30px;
+    padding: 5px;
+    border-radius: 5px;
+    margin-right: 29%;
+    color: rgb(255, 255, 255);
+    border: 3px double black;
+}
+::placeholder{
+    color: rgba(71, 71, 70, 0.659);
+    padding-left: 10px;
+    font-size: 16px;
+    
+    
+}
+input#fname{
+    border: 2px solid black;
+    margin:10px;
+    padding-top: 5px;
+    padding-right: 40%;
+    background-color: rgba(240, 248, 255, 0);
+    border-radius: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*------CSS-MOKARAR-KOULCHI---------------*/
+
+body{
+    background-image: url(kk.jpg);
+   background-size: cover;
+}
+
+
+*{
+    
+    padding: 0;
+    margin: 0;
+}
+.navBar{  
+    width:100%;
+    background-color: rgb(0, 0, 0);
+    height: 80px;
+    margin-right: 20px;
+    
+}
+
+.btnAdmin button{
+    height: 90%;
+    width: 75%;
+    min-width: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 50px;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+img{
+    height: 80px;
+   
+}
+.logoIMG{
+    padding-left: 41%;  
+}
+
+h2{
+    color: rgb(0, 0, 0);
+    background-color:rgba(255, 128, 0, 0.805); 
+    height:40px ;
+    margin-right: 0%;
+    padding-top: 10px;
+    margin-bottom: -46px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+i{
+    margin-right: 4px;
+    
+}
+.ac{
+    background-color:rgba(0, 0, 0, 0.85); ;
+    color: rgb(255, 255, 255);
+    border-top: 8px solid orange;
+}
+
+
+.menu{
+    margin-top: 0px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0);
+    height: 91vh;
+    width: 25%;
+    font-family: "Josefin Sans", sans-serif;} 
+
+.card_option{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 40px ;
+    font-family:Arial, Helvetica, sans-serif
+
+}
+.card_logout{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0px ;
+}
+.menu  button {
+    margin: auto;
+    margin-top: 10px;
+    width: 30%;
+    height: 45px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    background-color: rgb(66, 65, 65);
+    color:rgb(255, 255, 255);
+    border: 3px solid rgb(160, 160, 160);
+}
+a:hover {
+    color: rgb(255, 255, 255);
+    border-top: 8px solid orange;
+}
+a{
+    text-decoration:none;
+    padding-top: 10px;
+    padding: 20px;
+    text-align: left;
+    border-radius: 10px;
+    margin: 5px;
+    background-color: rgb(66, 65, 65);
+    font-size: 1.1rem;
+    font-weight: 100;
+    color:rgb(255, 255, 255);
+    transition: 0.3s ease-in-out;
+    font-family: "Josefin Sans", sans-serif;   
+    
+}

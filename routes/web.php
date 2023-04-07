@@ -17,6 +17,24 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/Student', function () {
+    return view('student');
+});
+
+Route::get('/liste', function () {
+    return view('liste');
+});
+
+Route::get('/livres', function () {
+    return view('livres');
+});
+Route::get('/category', function () {
+    return view('category');
+});
+Route::get('/return', function () {
+    return view('return');
+});
+
 
 
 // {
