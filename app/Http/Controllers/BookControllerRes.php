@@ -121,4 +121,10 @@ class BookControllerRes extends Controller
         return redirect()->route('books.index');
         //
     }
+    public function searchByCategory(Request $request)
+{
+    $category = $request->input('category');
+    $results = book::where('genre', $category)->paginate(10);
+    return view('showBooks', ['Books' => $results]);
+}
 }

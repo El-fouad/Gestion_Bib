@@ -15,6 +15,7 @@ Route::get('/find-book', function () {
 });
 
 Route::resource('books' , BookControllerRes::class);
+// Route::get('/books', 'BookControllerRes@searchByCategory')->name('books.category');
 // Route::resource('add' , BookControllerRes::class);
 // Route::get('/books', function () {
 //     return view('showBooks');

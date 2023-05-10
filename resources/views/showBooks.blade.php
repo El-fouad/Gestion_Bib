@@ -5,8 +5,8 @@
 @extends('layout')
 @section('content')
     <div class="fielterBooks">
-        <form action="">
-            <input type="text" placeholder="fielter les livres avec categorie...">
+        <form action='' method="get">
+            <input type="text" name="category" placeholder="fielter les livres avec categorie...">
             <input type="submit" value='Fielter'>
         </form>
     </div>
@@ -29,7 +29,7 @@
                             <td>{{ $book['date']}}</td>
                             <td class="outOfStock">5</td>
                             <td>{{ $book['stock']}}</td>
-                        </tr>
+                </tr>
                 @endforeach
             </table>
             {{$books->links()}}
