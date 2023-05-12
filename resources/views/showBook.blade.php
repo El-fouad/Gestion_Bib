@@ -2,7 +2,7 @@
 @extends('layout')
 @section('content')
     <div class="infosNewBook">
-        <h1> <button><</button> Les Informations de Livre </h1>
+        <h1> <button onclick=""><</button> Les Informations de Livre </h1>
         {{-- th>title</th>
         <th>author</th>
         <th>Category</th>
