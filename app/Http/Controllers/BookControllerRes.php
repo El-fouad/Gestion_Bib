@@ -102,7 +102,7 @@ class BookControllerRes extends Controller
         //
         
         $book=book::findOrFail($id); 
-        // dd($request->all());               
+        //dd($request->all());               
         $res=$request->all();                           
         $book->update($res);                        
 

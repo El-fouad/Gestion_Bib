@@ -37,8 +37,20 @@
                 </tr>
                 <tr>
                     <th class="textInfo">Catégory </th>
-                    <th><input type="text" id="fname" name="category"
-                            placeholder="Entree Catégory de livre">
+                    <th>
+                        {{-- <input type="text" id="fname" name="category"
+                            placeholder="Entree Catégory de livre"> --}}
+                            <select name="category" id="fname" id="">
+                                <option value="Roman ">Roman </option>
+                                <option value="Essai ">Essai </option>
+                                <option value="Poésie ">Poésie </option>
+                                <option value="Théâtre ">Théâtre </option>
+                                <option value="Biographie ">Biographie </option>
+                                <option value="Autobiographie">Autobiographie</option>
+                                <option value="Histoire ">Histoire </option>
+                                <option value="Policier">Policier</option>
+                                <option value="fantaisie">fantaisie</option>
+                            </select>
                     </th>
                 </tr>
                 <tr>
@@ -49,7 +61,7 @@
                 </tr>
                 <tr>
                     <th class="textInfo">la date  </th>
-                    <th><input type="text" id="fname" name="date"
+                    <th><input type="date" id="fname" name="date"
                             placeholder="Entree La date de lancement ">
                     </th>
                 </tr>

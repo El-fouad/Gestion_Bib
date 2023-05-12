@@ -32,8 +32,18 @@
                 </tr>
                 <tr>
                     <th class="textInfo">Catégory </th>
-                    <th><input value={{$book->genre}} type="text" id="fname" name="genre"
-                            placeholder="Entree Catégory de livre">
+                    <th>
+                        <select name="genre" id="fname" id="">
+                            <option value="Roman ">Roman </option>
+                            <option value="Essai ">Essai </option>
+                            <option value="Poésie ">Poésie </option>
+                            <option value="Théâtre ">Théâtre </option>
+                            <option value="Biographie ">Biographie </option>
+                            <option value="Autobiographie">Autobiographie</option>
+                            <option value="Histoire ">Histoire </option>
+                            <option value="Policier">Policier</option>
+                            <option value="fantaisie">fantaisie</option>
+                        </select>
                     </th>
                 </tr>
                 <tr>
