@@ -49,7 +49,7 @@
                 </tr>
                 <tr>
                     <th class="textInfo">la date  </th>
-                    <th><input type="text" id="fname" name="date"
+                    <th><input type="date" id="fname" name="date"
                             placeholder="Entree La date de lancement ">
                     </th>
                 </tr>
