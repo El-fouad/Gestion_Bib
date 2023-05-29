@@ -5,15 +5,20 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Models\book;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class BookControllerRes extends Controller
 {
     
     public function index()
     {   
-        $books = book::paginate(10);
+        $user =User::find(Auth::id());
+        $books = $user->books()->paginate(10);
+        // $books = book::paginate(10);
         // $data = Storage::get('dataBase.json');
         // $books = json_decode($data, true);
+        // dd($books);
         return view('showBooks',['books'=>$books]);
     }
 
@@ -58,8 +63,9 @@ class BookControllerRes extends Controller
         $book->stock = $request->input('quantity');
         $book->description = $request->input('description');
         $book->date = $request->input('date');
+        $book->user_id = Auth::id();
         $book->save();
-        return redirect()->route('books.index');
+        return redirect()->route('books.index')->with('ajout','livre bien ete ajouté');
     }
 
     /**
@@ -71,6 +77,7 @@ class BookControllerRes extends Controller
     public function show($id)
     {
         $book = book::find($id);
+        // dd($book);
         if (!$book){
             abort(404);
         } 
@@ -118,13 +125,42 @@ class BookControllerRes extends Controller
     public function destroy($id)
     {
         book::destroy($id);
-        return redirect()->route('books.index');
+        return redirect()->route('books.index')->with('supp','livre bien ete supprimé avec succés');
         //
     }
     public function searchByCategory(Request $request)
 {
     $category = $request->input('category');
+    return redirect()->route('books.categoryType',['category'=>$category]);
+}
+    public function searchByName(Request $request)
+{
+    $user =User::find(Auth::id());
+    $name = $request->input('title');
+    $book = $user->books()->where('title', 'like', '%' . $name . '%')->get();
+    if (!isset($book[0])){
+           
+            abort(404);
+        } 
+        return view('showBook',['book'=>$book[0]]);
+}
+public function category()
+{
+    $genre = ["Roman ",
+                "Essai ",
+                "Poésie ",
+                "Théâtre ",
+                "Biographie ",
+                "Autobiographie",
+                "Histoire ",
+                "Policier",
+                "fantaisie",
+            'programmation'];
+    return view('category', ['genre'=>$genre]);
+}
+public function categoryType($category)
+{
     $results = book::where('genre', $category)->paginate(10);
-    return view('showBooks', ['Books' => $results]);
+    return view('categoryFiltered', ['books'=>$results]);
 }
 }

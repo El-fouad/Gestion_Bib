@@ -6,32 +6,32 @@ use App\Http\Controllers\BookControllerRes;
 Route::get('/', function () {
     return view('home');
 });
-Route::get('/layout', function () {
-    return view('layout');
-});
-
-Route::get('/find-book', function () {
-    return view('findBook');
-});
-
-Route::resource('books' , BookControllerRes::class);
-// Route::get('/books', 'BookControllerRes@searchByCategory')->name('books.category');
-// Route::resource('add' , BookControllerRes::class);
-// Route::get('/books', function () {
-//     return view('showBooks');
+// Route::get('/layout', function () {
+//     return view('layout');
 // });
+
+// Route::get('/find-book', function () {
+//     return view('findBook');
+// })->middleWare('auth');
+
+Route::resource('books' , BookControllerRes::class)->middleWare('auth');
+Route::post('/filter',[ BookControllerRes::class,'searchByCategory'])->name('books.category')->middleWare('auth')   ;
+Route::post('/search',[ BookControllerRes::class,'searchByName'])->name('books.findTitle')->middleWare('auth')   ;
+Route::get('category/filter/{category}',[ BookControllerRes::class,'categoryType'])->name('books.categoryType')->middleWare('auth') ;
+
 Route::get('/add-book', function () {
     return view('createBook');
-});
-Route::get('/category', function () {
-    return view('category');
-});
-
-Route::get('/livres', 'App\Http\Controllers\BookController@home');
-// Route::get('/return', function () {
-//     return view('return');
-// });
+})->middleWare('auth');
+Route::get('/category', [ BookControllerRes::class,'category'])->middleWare('auth');
+// Route::get('/livres', 'App\Http\Controllers\BookController@home')->middleWare('auth');
 
 
 
 // 
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleWare('auth');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

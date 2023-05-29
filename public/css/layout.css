@@ -3,7 +3,7 @@
     margin: 0;
 }
 body {
-    background-image: url(kk.jpg);
+    /* background-image: url(kk.jpg); */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -30,26 +30,30 @@ body {
 .page {
     display: flex;
     width: 100%;
-    height: 84.5vh;
+    height: 91.5vh;
     }
 
 .menu {
     display: flex;
     flex-direction: column;
     flex: 1;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: rgba(0, 0, 0);
     font-family: "Josefin Sans", sans-serif;
-    background: #00416a; /* fallback for old browsers */
-    background: -webkit-linear-gradient(
+    
+    /* background: #00416a;  */
+    /* fallback for old browsers */
+    /* background: -webkit-linear-gradient(
         to left,
         #ffffff00,
         #000000
-    ); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(
+    ); */
+     /* Chrome 10-25, Safari 5.1-6 */
+    /* background: linear-gradient(
         to left,
         #ffffff00,
         #000000
-    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    );  */
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
 .content {
@@ -90,7 +94,7 @@ body {
     padding: 20px;
     text-align: left;
     border-radius: 10px;
-    margin: 5px;
+    margin: 25px  5px;
     background-color: rgb(66, 65, 65);
     font-size: 1.1rem;
     font-weight: 100;

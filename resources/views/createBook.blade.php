@@ -1,17 +1,11 @@
 
 <link rel="stylesheet" href="{{ asset('css/createBook.css') }}">
-@extends('layout')
+@extends('layouts.app')
 @section('content')
     
 
 <div class="infosNewBook">
     <h1>Les Informations de Livre :</h1>
-    {{-- th>title</th>
-        <th>author</th>
-        <th>Category</th>
-        <th>Date</th>
-        <th>out of stock</th>
-        <th>total</th> --}}
     <div class="formInfosBook">
         <form action="{{route('books.store')}}" method="POST" >
             @csrf
@@ -50,6 +44,7 @@
                                 <option value="Histoire ">Histoire </option>
                                 <option value="Policier">Policier</option>
                                 <option value="fantaisie">fantaisie</option>
+                                <option value="programmation">programmation</option>
                             </select>
                     </th>
                 </tr>

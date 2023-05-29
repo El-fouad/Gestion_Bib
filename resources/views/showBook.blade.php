@@ -1,16 +1,10 @@
 <link rel="stylesheet" href="{{ asset('css/showBook.css') }}">
-@extends('layout')
+@extends('layouts.app')
 @section('content')
     <div class="infosNewBook">
-        <h1> <button onclick=""><</button> Les Informations de Livre </h1>
-        {{-- th>title</th>
-        <th>author</th>
-        <th>Category</th>
-        <th>Date</th>
-        <th>out of stock</th>
-        <th>total</th> --}}
+        <h1>  Les Informations de Livre </h1>
         <div class="showInfosBook">
-            <table border="2" style="width: 80%;textAlign:center">
+            <table class="table caption-top"  style="width: 80%;textAlign:center">
                 <tr>
                     <th class="textInfoShow">Nom livre </th>
                     <th>
@@ -48,14 +42,19 @@
                     </th>
                 </tr>
             </table>
-            <a href={{ route('books.edit', $book->id) }}>
-                <button class="editBTN"> Modifier les Informations</button>
-            </a>
-            <form action="{{ route('books.destroy', $book->id) }}" method='post'>
-                @csrf
-                @method('DELETE')
-                <button type="submit" class="editBTN suppBTN">suppremier le livre</button>
-            </form>
+            <div class="container d-flex justify-content-around ">
+
+                <a href={{ route('books.edit', $book->id) }}>
+                    {{-- <button class="editBTN"> Modifier les Informations</button> --}}
+                    <button type="button" class="btn btn-primary">Modifier</button>
+                </a>
+                <form action="{{ route('books.destroy', $book->id) }}" method='post'>
+                    @csrf
+                    @method('DELETE')
+                    {{-- <button type="submit" class="editBTN suppBTN">suppremier le livre</button> --}}
+                    <button type="submit" class="btn btn-danger">Supprimer</button>
+                </form>
+            </div>
 
         </div>
     </div>

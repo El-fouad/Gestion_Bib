@@ -18,9 +18,10 @@ class CreateBooksTable extends Migration
             $table->string('title');
             $table->string('author');
             $table->string('genre');
-            $table->string('description');
+            $table->text('description');
             $table->integer('stock');
             $table->date('date');
+            $table->foreignId('user_id')->constrained('users');
             $table->timestamps();
         });
     }

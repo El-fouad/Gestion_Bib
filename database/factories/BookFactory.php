@@ -19,7 +19,9 @@ class BookFactory extends Factory
             "genre" => $this->faker->text(10),
             'stock' =>$this->faker->date(5),
             "description"=> $this->faker->text(150),
-            "date"=> $this->faker->date()
+            "date"=> $this->faker->date(),
+            "user_id"=> 1,
+
         ];
     }
 }

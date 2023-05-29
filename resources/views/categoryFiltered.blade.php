@@ -1,21 +1,11 @@
-<link rel="stylesheet" href="{{ asset('css/showBooks.css') }}">
+<link rel="stylesheet" href="{{ asset('css/category.css') }}">
 <!-- Latest compiled and minified CSS -->
 {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> --}}
 
 @extends('layouts.app')
 @section('content')
-@if (session('ajout'))
-        <div class="alert alert-success text-center"   role="alert">
-            {{ session('ajout') }}
-        </div>
-@endif
-@if (session('supp'))
-        <div class="alert alert-danger text-center"   role="alert">
-            {{ session('supp') }}
-        </div>
-@endif
-<div class="fielterBooks">
-    <form action='{{route('books.category')}}' method="post">
+    <div class="fielterBooks">
+        <form action='{{route('books.category')}}' method="post">
             @csrf
             {{-- <input type="text" name="category" placeholder="fielter les livres avec categorie..."> --}}
             <select name="category" id="fname" id="">
@@ -28,26 +18,24 @@
                 <option value="Histoire ">Histoire </option>
                 <option value="Policier">Policier</option>
                 <option value="fantaisie">fantaisie</option>
-                <option value="programmation">programmation</option>
             </select>
             <input type="submit" value='Filter'>
         </form>
     </div>
     <div class="zoneBooks">
         <div class="books">
-            <table class="tableBooks1111 table caption-top">
-                <thead>
-                    <th scope="col"></th>
-                    <th scope="col">title</th>
-                    <th scope="col">author</th>
-                    <th scope="col">Category</th>
-                    <th scope="col">Date</th>
-                    {{-- <th scope="col">out of stock</th> --}}
-                    <th scope="col">total</th>
-                </thead>
+            <table class="table caption-top">
+                <tr>
+                    <th></th>
+                    <th>title</th>
+                    <th>author</th>
+                    <th>Category</th>
+                    <th>Date</th>
+                    <th>total</th>
+                </tr>
                 <?php $ind = 0?>
                 @foreach ($books as $book)
-                <tr class="bookInfo" onclick="location.href='books/{{ $book['id']}}'">
+                <tr class="bookInfo" onclick="location.href='../../books/{{ $book['id']}}'">
                     <td class="outOfStock">{{$ind+=1}}</td>
                             <td>{{ $book['title']}}</td>
                             <td>{{ $book['author']}}</td>
@@ -61,5 +49,3 @@
         </div>
     </div>
 @endsection
-
-
