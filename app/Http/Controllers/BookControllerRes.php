@@ -159,7 +159,7 @@ public function category()
     return view('category', ['genre'=>$genre]);
 }
 public function categoryType($category)
-{
+{   
     $results = book::where('genre', $category)->paginate(10);
     return view('categoryFiltered', ['books'=>$results]);
 }
